@@ -1,50 +1,102 @@
-# Welcome to your Expo app 👋
+# RN-Todo: A React Native Todo Application with Convex Backend
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a simple yet feature-rich Todo application built with React Native and Expo. It uses Convex as a backend for real-time data synchronization.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Cross-Platform:** Runs on Android, iOS, and Web.
+- **Real-time Database:** Powered by Convex for real-time data synchronization.
+- **CRUD Operations:** Create, Read, Update, and Delete todos.
+- **Toggle Completion:** Mark todos as completed or incomplete.
+- **Edit Todos:** In-place editing of existing todos.
+- **Clear All:** A feature to delete all todos at once.
+- **Theming:** Supports both light and dark themes.
+- **Empty State:** A clean UI for when there are no todos.
+- **Modern UI:** Built with modern and intuitive UI components.
 
-   ```bash
-   npm install
-   ```
+## Technologies Used
 
-2. Start the app
+- **Frontend:**
+  - React Native
+  - Expo
+  - TypeScript
+  - React Navigation
+- **Backend:**
+  - Convex
+- **Linting:**
+  - ESLint
 
-   ```bash
-   npx expo start
-   ```
+## Prerequisites
 
-In the output, you'll find options to open the app in a
+- Node.js (v18 or higher)
+- npm
+- Expo CLI
+- A Convex account
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Setup Instructions
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1.  **Clone the repository:**
 
-## Get a fresh project
+    ```bash
+    git clone https://github.com/BSSE23001/rn-todo.git
+    cd rn-todo
+    ```
 
-When you're ready, run:
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Set up Convex:**
+
+    - Install the Convex CLI:
+
+      ```bash
+      npm install -g convex
+      ```
+
+    - Log in to your Convex account:
+
+      ```bash
+      npx convex login
+      ```
+
+    - Initialize Convex in your project:
+
+      ```bash
+      npx convex init
+      ```
+
+    - Follow the on-screen instructions to create a new project.
+    - Deploy the backend functions and schema:
+
+      ```bash
+      npx convex deploy
+      ```
+    - The previous command will create a `convex/_generated/api.js` file with your project's API. The app is already set up to use this.
+
+
+## Running the Application
+
+You can start the development server and then choose the platform from the Expo Dev Tools.
 
 ```bash
-npm run reset-project
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Project Structure
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+.
+├── app/                # Main application source code
+│   ├── (tabs)/         # Tab navigator screens
+│   └── _layout.tsx     # Root layout
+├── assets/             # Images, fonts, and styles
+├── components/         # Reusable React components
+├── convex/             # Convex backend schema and functions
+├── hooks/              # Custom React hooks
+├── app.json            # Expo configuration
+├── package.json        # Project dependencies and scripts
+└── tsconfig.json       # TypeScript configuration
+```
